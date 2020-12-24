@@ -15,10 +15,12 @@ The Example consists of HTTPD server demo with demostration of URI handling :
             * the script does a POST to \echo with the user input \<MSG\> and displays the response
         * or use curl (asssuming IP is 192.168.43.130):
             1. "curl 192.168.43.130:80/hello"  - tests the GET "\hello" handler
-            2. "curl -X POST --data-binary @anyfile 192.168.43.130:80/echo > tmpfile"
+            2. "curl 192.168.43.130:80/picture"  - tests the GET "\picture" handler  - image from the camera
+            3.  "curl 192.168.43.130:80/picture_stream"  - tests the GET "\picture_stream" handler stream of image
+            4. "curl -X POST --data-binary @anyfile 192.168.43.130:80/echo > tmpfile"
                 * "anyfile" is the file being sent as request body and "tmpfile" is where the body of the response is saved
                 * since the server echoes back the request body, the two files should be same, as can be confirmed using : "cmp anyfile tmpfile"
-            3. "curl -X PUT -d "0" 192.168.43.130:80/ctrl" - disable /hello and /echo handlers
-            4. "curl -X PUT -d "1" 192.168.43.130:80/ctrl" -  enable /hello and /echo handlers
-
+            5. "curl -X PUT -d "0" 192.168.43.130:80/ctrl" - disable /hello and /echo handlers
+            6. "curl -X PUT -d "1" 192.168.43.130:80/ctrl" -  enable /hello and /echo handlers
+      
 See the README.md file in the upper level 'examples' directory for more information about examples.
